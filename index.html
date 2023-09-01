@@ -5,12 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous"
+     referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header></header>
+  <section id="carrinho" class="fixed top-0 right-0 bg-indigo-950 h-screen w-[360px] text-slate-200">
+    <div id="cabecalho-carrinho" class="flex justify-between m-4">
+      <p>Meu carrinho</p>
+      <button id="fechar-carrinho">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+    <section id="produtos-carrinho">
+      <p>Camisa Larga com Bolsos</p>
+      <p>Casaco Reto com Lã</p>
+      <p>Jaqueta com Efeito Camurça</p>
+    </section>
+    <p id="preco-total">R$200</p>
+    <button class="bg-slate-200">Finalizar Compra</button>
+  </section>
+  <header class="flex bg-indigo-950 p-2 justify-between">
+    <img class="h-14" src="./assets/logo/hashtag.svg" alt="Logo Magazine">
+    <div class="text-slate-200 flex gap-2 items-end mx-2">
+      <button><i class="fa-solid fa-user"></i></button>
+      <button><i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+  </header>
+
 
   <main>
-    <section id="container-produto">
+    <section id="container-produto"  class="flex flex-wrap">
       
     </section>
   </main>
