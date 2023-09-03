@@ -1,3 +1,6 @@
+import { inicializarCarrinho } from "./src/menuCarrinho";
+
+
 const produto1 = {
   id: 1,
   nome: "Casaco Branco",
@@ -92,4 +95,5 @@ for ( const produtoCatalogo of catalogo){
   document.getElementById("container-produto").innerHTML += cartaoProduto;
 }
 
+inicializarCarrinho();
 
