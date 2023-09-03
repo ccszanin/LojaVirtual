@@ -11,8 +11,8 @@
     crossorigin="anonymous"
      referrerpolicy="no-referrer" />
 </head>
-<body>
-  <section id="carrinho" class="fixed top-0 right-[-360px] bg-indigo-950 h-screen w-[360px] text-slate-200">
+<body class="bg-stone-200 flex flex-col">
+  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-slate-200 z-50">
     <div id="cabecalho-carrinho" class="flex justify-between m-4">
       <p>Meu carrinho</p>
       <button id="fechar-carrinho">
@@ -27,17 +27,17 @@
     <p id="preco-total">R$200</p>
     <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
   </section>
-  <header class="flex bg-indigo-950 p-2 justify-between">
-    <img class="h-14" src="./assets/logo/hashtag.svg" alt="Logo Magazine">
+  <header class="flex bg-slate-950 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0">
+    <img class="h-10" src="./assets/logo/hashtag.svg" alt="Logo Magazine">
     <div class="text-slate-200 flex gap-2 items-end mx-2">
-      <button ><i class="fa-solid fa-user"></i></button>
-      <button id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+      <button class="mx-2" ><i class="fa-solid fa-user "></i></button>
+      <button id="abrir-carrinho" class="mr-2"><i class="fa-solid fa-cart-shopping"></i></button>
     </div>
   </header>
 
 
-  <main>
-    <section id="container-produto"  class="flex flex-wrap">
+  <main class="">
+    <section id="container-produto"  class="flex flex-wrap p-10 justify-center gap-10">
       
     </section>
   </main>
