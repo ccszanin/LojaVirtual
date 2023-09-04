@@ -12,7 +12,7 @@
      referrerpolicy="no-referrer" />
 </head>
 <body class="bg-stone-200 flex flex-col">
-  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-slate-200 z-50">
+  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-slate-200 z-50 duration-200 border-l border-slate-200 p-5 flex flex-col justify-between">
     <div id="cabecalho-carrinho" class="flex justify-between m-4">
       <p>Meu carrinho</p>
       <button id="fechar-carrinho">
@@ -20,7 +20,18 @@
       </button>
     </div>
     <section id="produtos-carrinho">
-      <p>Camisa Larga com Bolsos</p>
+      <article class="flex bg-slate-100 rounded-lg p-1 relative"> 
+        <button id="fechar-carrinho" class="absolute top-0 right-2">
+          <i class="fa-solid fa-circle-xmark  text-slate-500 hover:text-slate-800"></i>
+        </button>
+        <img src="./assets/img/product-1.jpg" alt="carrinho: Camisa Larga com Bolsos" class="h-24 rounded-lg">
+        <div class="py-2">
+          <p class="text-slate-900 text-sm">Camisa Larga com Bolsos</p>
+          <p class="text-slate-400 text-xs">Tamanho: M</p>
+          <p class="text-slate-500 tex t-lg">$70</p>
+        </div>
+        
+      </article>
       <p>Casaco Reto com Lã</p>
       <p>Jaqueta com Efeito Camurça</p>
     </section>
