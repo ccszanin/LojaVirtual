@@ -41,8 +41,14 @@ export function adicionarAoCarrinho(idProduto){
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
   const produto = catalogo.find((p) => p.id === idProduto);
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho');
-  const cartaoProdutoCarrinho = ` <article class="flex bg-slate-100 rounded-lg p-1 relative"> 
-  <button id="fechar-carrinho" class="absolute top-0 right-2">
+
+  const elementoArticle = document.createElement ("article");
+  const articleClasses = ['flex', 'bg-slate-100', 'rounded-lg', 'p-1', 'relative',];
+  for (const articleClass of articleClasses){
+    elementoArticle.classList.add(articleClass);
+  }
+
+  const cartaoProdutoCarrinho = `<button id="fechar-carrinho" class="absolute top-0 right-2">
     <i class="fa-solid fa-circle-xmark  text-slate-500 hover:text-slate-800"></i>
   </button>
   <img src="./assets/img/${produto.imagem}" alt="Carrinho: ${produto.nome}" class="h-24 rounded-lg">
@@ -55,10 +61,10 @@ export function adicionarAoCarrinho(idProduto){
     <button id="decrementar-produto-${produto.id}">-</button>
     <p id="quantidade-${produto.id}" class="ml-2">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
     <button id="incrementar-produto-${produto.id}" class="ml-2">+</button>
-  </div>
-</article>`;
+  </div>`;
 
-containerProdutosCarrinho.innerHTML += cartaoProdutoCarrinho;
+elementoArticle.innerHTML = cartaoProdutoCarrinho;
+containerProdutosCarrinho.appendChild(elementoArticle)
 
 document.getElementById(`decrementar-produto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
 
