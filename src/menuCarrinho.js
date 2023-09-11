@@ -1,6 +1,6 @@
-import { catalogo} from "./utilidades";
+import { catalogo, salvarLocalStorage, lerLocalStorage} from "./utilidades";
 
-const idsProdutoCarrinhoComQuantidade= {};
+const idsProdutoCarrinhoComQuantidade= lerLocalStorage('carrinho') ?? {};
 
 function abrirCarrinho(){
   document.getElementById('carrinho').classList.add('right-[0px]');
@@ -22,12 +22,14 @@ botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
 
 function removerDoCarrinho(idProduto){
   delete idsProdutoCarrinhoComQuantidade[idProduto];
+  salvarLocalStorage('Carrinho', idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto){
   idsProdutoCarrinhoComQuantidade[idProduto]++;
+  salvarLocalStorage('Carrinho', idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInfromacaoQuantidade(idProduto);
 }
@@ -38,6 +40,7 @@ function decrementarQuantidadeProduto(idProduto){
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
+  salvarLocalStorage('Carrinho', idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInfromacaoQuantidade(idProduto);
 }
@@ -82,7 +85,7 @@ document.getElementById(`incrementar-produto-${produto.id}`).addEventListener('c
 document.getElementById(`remover-item-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
 }
 
-function renderizarProdutosCarrinho(){
+export function renderizarProdutosCarrinho(){
   const containerProdutosCarrinho = document.getElementById('produtos-carrinho');
   containerProdutosCarrinho.innerHTML = "";
   for(const idProduto in idsProdutoCarrinhoComQuantidade){
@@ -97,11 +100,12 @@ export function adicionarAoCarrinho(idProduto){
       return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
-  atualizarPrecoCarrinho()
+  salvarLocalStorage('Carrinho', idsProdutoCarrinhoComQuantidade)
   desenharProdutoNoCarrinho(idProduto);
+  atualizarPrecoCarrinho();
 }
 
-function atualizarPrecoCarrinho(){
+export function atualizarPrecoCarrinho(){
   const precoCarrinho = document.getElementById("preco-total");
   let precoTotalCarrinho = 0;
    for(const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade){
