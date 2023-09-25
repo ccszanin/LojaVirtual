@@ -11,19 +11,28 @@
     crossorigin="anonymous"
      referrerpolicy="no-referrer" />
 </head>
-<body class="bg-stone-200 flex flex-col">
+<body class="bg-stone-200 flex flex-col h-screen">
   <header class="flex bg-slate-950 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0 z-10">
     <img class="h-9" src="./assets/logo/hashtag.svg" alt="Logo Magazine">
   </header>
 
 
-  <form class="flex w-100 px-5 gap-4 py-10">
-  <section id="dados-usuario" class="w-1/3 bg-slate-300 rounded-lg">
+  <form class="flex w-100 px-5 gap-4 py-10 grow">
+  <section id="dados-usuario" class="w-1/3 bg-white rounded-lg py-5">
     <p class="mb-5 text-center">Seus Dados</p>
-    <div class="flex flex-col px-10 py-5">
-       <label for="nome">Nome</label>
-       <input type="text" id="nome">
+    <div class="flex flex-col px-10 py-3">
+       <label for="nome" class="font-bold text-sm mb-2">Nome</label>
+       <input type="text" id="nome" class="rounded-sm px-2 border-2 border-slate-200 py-1" placeholder="Nome Completo" required >
     </div>
+    <div class="flex flex-col px-10 py-3">
+      <label for="email" class="font-bold text-sm mb-2">Email</label>
+      <input type="email" id="email" class="rounded-sm px-2 border-2 border-slate-200 py-1" placeholder="exemplo@email" required >
+   </div>
+   <div class="flex flex-col px-10 py-3">
+    <label for="telefone" class="font-bold text-sm mb-2">Telefone</label>
+    <input type="tel" id="telefone" class="rounded-sm px-2 border-2 border-slate-200 py-1" placeholder="(99)99999-9999" required >
+ </div>
+   
   </section>
     <section id="dados-pagamento" class="w-1/3"></section>
     <section id="produtos-checkout" class="w-1/3"></section>
